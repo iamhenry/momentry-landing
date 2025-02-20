@@ -1,10 +1,10 @@
-"use client"
+"use client";
 
-import Image from "next/image"
-import { motion, type Variants } from "framer-motion"
-import { Logo } from "@/components/logo"
-import { Button } from "@/components/ui/button"
-import { ThemeToggle } from "@/components/theme-toggle"
+import Image from "next/image";
+import { motion, type Variants } from "framer-motion";
+import { Logo } from "@/components/logo";
+import { Button } from "@/components/ui/button";
+import { ThemeToggle } from "@/components/theme-toggle";
 
 const containerVariants: Variants = {
   initial: { opacity: 0 },
@@ -15,7 +15,7 @@ const containerVariants: Variants = {
       delayChildren: 0.3,
     },
   },
-}
+};
 
 const fadeInVariants: Variants = {
   initial: { opacity: 0 },
@@ -23,7 +23,7 @@ const fadeInVariants: Variants = {
     opacity: 1,
     transition: { duration: 0.5 },
   },
-}
+};
 
 const slideUpVariants: Variants = {
   initial: { opacity: 0, y: 20 },
@@ -35,7 +35,7 @@ const slideUpVariants: Variants = {
       ease: [0.22, 1, 0.36, 1],
     },
   },
-}
+};
 
 export default function Home() {
   return (
@@ -65,16 +65,25 @@ export default function Home() {
               >
                 Track life's important moments right from your Mac's menu bar
               </motion.h1>
-              <motion.p className="text-sm sm:text-base text-muted-foreground md:text-lg" variants={slideUpVariants}>
-                Simple, elegant countdown tracking for birthdays, anniversaries, and special events - always visible at
-                a glance.
+              <motion.p
+                className="text-sm sm:text-base text-muted-foreground md:text-lg"
+                variants={slideUpVariants}
+              >
+                Simple, elegant countdown tracking for birthdays, anniversaries,
+                and special events - always visible at a glance.
               </motion.p>
             </motion.div>
 
             <motion.div variants={slideUpVariants}>
-              <Button size="lg" className="w-full sm:w-auto">
-                Download for Mac
-              </Button>
+              <a
+                href="https://apps.apple.com/us/app/momentry/id6741929907"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <Button size="lg" className="w-full sm:w-auto">
+                  Download for Mac
+                </Button>
+              </a>
             </motion.div>
           </motion.div>
 
@@ -86,7 +95,10 @@ export default function Home() {
             transition={{ delay: 1.2 }}
           >
             <span>© 2024 Momentry. All rights reserved.</span>
-            <a href="mailto:virtualhenry@gmail.com?subject=Momentry Support" className="hover:underline">
+            <a
+              href="mailto:virtualhenry@gmail.com?subject=Momentry Support"
+              className="hover:underline"
+            >
               Support
             </a>
           </motion.div>
@@ -110,6 +122,5 @@ export default function Home() {
         </motion.div>
       </div>
     </div>
-  )
+  );
 }
-
